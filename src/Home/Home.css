@@ -1,0 +1,19 @@
+.navbar-margin{
+    margin-top: 56px;
+
+}
+.services{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.slider-image{
+    height: 560px;
+}
+.text-color{
+    color: #FFFFFFB0;
+    font: 18px Roboto;
+}
+
+.header-color{
+    font: 36px Roboto;
+}

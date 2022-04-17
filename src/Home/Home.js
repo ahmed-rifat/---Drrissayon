@@ -7,48 +7,50 @@ const Home = () => {
     const [packagesItem, setPackagesItem] = usePackage();
     return (
         <div>
-              <div>
-              <Carousel>
-  <Carousel.Item>
-    <img
-      className="d-block w-100 slider-image"
-      src='slider-1.jpg'
-      alt="First slide"
-    />
-    <Carousel.Caption>
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-    </Carousel.Caption>
-  </Carousel.Item>
-  <Carousel.Item>
-    <img
-      className="d-block w-100 slider-image"
-      src="slider2.jpg"
-      alt="Second slide"
-    />
+        <div className='navbar-margin'>
+            <Carousel>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100 slider-image"
+                  src='slider-1.jpg'
+                  alt="First slide"
+                />
+                <Carousel.Caption>
+                  <h3 className='header-color'>A picture is worth a thousand words</h3>
+                  <p className='text-color'> It clearly and beautifully captures your emotions- the joy, the laughter, the tears, you name it. Our pride is in offering the best shoots as we help you tell your story in photos.</p>
+                </Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100 slider-image"
+                  src="slider2.jpg"
+                  alt="Second slide"
+                />
 
-    <Carousel.Caption>
-      <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </Carousel.Caption>
-  </Carousel.Item>
-  <Carousel.Item>
-    <img
-      className="d-block w-100 slider-image"
-      src="slider3.jpg"
-      alt="Third slide"
-    />
+                <Carousel.Caption>
+                  <h3 className='header-color'>Ready to take you beyond your imagination!</h3>
+                  <p className='text-color'>With the uniqueness of our concepts and hard working quality, we are always a step ahead from others.
+                  We take photos so perfectly that you will feel the same that you had felt in that very special day
+                  with your very special one.</p>
+                </Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100 slider-image"
+                  src="slider3.jpg"
+                  alt="Third slide"
+                />
 
-    <Carousel.Caption>
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-    </Carousel.Caption>
-  </Carousel.Item>
-</Carousel>
-              </div>
+                <Carousel.Caption>
+                  <h3 className='header-color'>Every moment of your life is beautiful. </h3>
+                  <p className='text-color'>Your each movement,your each emotion is nothing but a beautiful picture and we just want to hold on those moments with our camera and make it a piece of art with our adroit editing.</p>
+                </Carousel.Caption>
+              </Carousel.Item>
+            </Carousel>
+       </div>
               <h1 className='text-center text-info'>Services</h1>
 
-              <div style={{display:'flex'}}>
+              <div className='container services'>
                   
                   {
                       
