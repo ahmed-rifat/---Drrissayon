@@ -1,8 +1,18 @@
 import React from 'react';
 import {Navbar, Nav, Container} from 'react-bootstrap';
+import {signOut } from 'firebase/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../Component/Firebase/Firebase.init';
 
 
 const Header = () => {
+  const [user, loading, error] = useAuthState(auth);
+  
+
+  const logout = () => {
+    signOut(auth);
+  };
+
     return (
         <div>
           <div className='fixed-top'>
@@ -15,7 +25,10 @@ const Header = () => {
           <Nav.Link href="/packages">Packages</Nav.Link>
           <Nav.Link href="#gallery">Gallery</Nav.Link>
           <Nav.Link href="#contact">Contact</Nav.Link>
-          <Nav.Link href="#login">Login</Nav.Link>
+          {
+            (user?.email)? <Nav.Link onClick={logout} href="/login">Logout</Nav.Link>:
+            <Nav.Link href="/login">Login</Nav.Link>
+          }
         </Nav>
         </Container>
       </Navbar>

@@ -46,9 +46,10 @@ const Home = () => {
   </Carousel.Item>
 </Carousel>
               </div>
+              <h1 className='text-center text-info'>Services</h1>
 
               <div style={{display:'flex'}}>
-                  <h1 className='text-center text-info'>Services</h1>
+                  
                   {
                       
                         packagesItem.map(item=>(
