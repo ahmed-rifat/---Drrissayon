@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "name": "Package-1",
+    "Photographer": 2,
+    "Cinephotographer": 2,
+    "drone": "Available",
+    "img": "unlimited",
+    "Hour": 5,
+    "rate": 36000
+  },
+  {
+    "id": 2,
+    "name": "Package-2",
+    "drone": "Available",
+
+    "Photographer": 2,
+    "Cinephotographer": 1,
+    "Assistant": 1,
+    "img": "unlimited",
+    "Hour": 5,
+    "rate": 30000
+  },
+  {
+    "id": 3,
+    "name": "Package-3",
+    "drone": "Available",
+
+    "Photographer": 1,
+    "Cinephotographer": 1,
+    "Assistant": 1,
+    "img": "unlimited",
+    "Hour": 4,
+    "rate": 24000
+  }
+]

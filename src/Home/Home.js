@@ -1,10 +1,14 @@
 import React from 'react';
-import { Carousel } from 'react-bootstrap';
+import { Button, Card, Carousel } from 'react-bootstrap';
+import usePackage from '../Component/usePackage/usePackage';
 import './Home.css'
 
 const Home = () => {
+    const [packagesItem, setPackagesItem] = usePackage();
     return (
-        <Carousel>
+        <div>
+              <div>
+              <Carousel>
   <Carousel.Item>
     <img
       className="d-block w-100 slider-image"
@@ -41,6 +45,37 @@ const Home = () => {
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
+              </div>
+
+              <div style={{display:'flex'}}>
+                  <h1 className='text-center text-info'>Services</h1>
+                  {
+                      
+                        packagesItem.map(item=>(
+                                 <Card className='shadow rounded m-4 p-3' style={{ width: '18rem' }}>
+                                 <Card.Body>
+                                 <Card.Title>{item.name}</Card.Title>
+                                 <p class="card-text">Droneshot:{item.drone}</p>
+                                 <p class="card-text">Photographer: {item.Photographer}</p>
+                                 <p class="card-text">Cinephotographer: {item.Cinephotographer}</p>
+                                 <p class="card-text">Images: {item.img}</p>
+                                 <p class="card-text">Hours: {item.Hour}</p>
+                                 <p class="card-text">Price: {item.rate} BDT</p>
+                                 </Card.Body>
+                                 </Card>
+                        ))
+                   
+                    }
+                  
+              </div>
+               <div>
+                   <footer>
+                         
+                        <hr />
+                        <p className='text-center'>Copyright © 2021. All right reserved drissayon.com.bd</p>
+                   </footer>
+               </div>
+        </div>
     );
 };
 
