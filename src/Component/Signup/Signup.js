@@ -3,7 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import Google from '../Google/Google';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../Firebase/Firebase.init';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const Signup = () => {
@@ -19,12 +19,14 @@ const Signup = () => {
         loading,
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
+      const navigate = useNavigate();
 
     console.log(createUserWithEmailAndPassword);
 
     const handlesubmit=(event)=>{
       event.preventDefault();
       createUserWithEmailAndPassword(email, password)
+      navigate('/login');
 
     }
     return (

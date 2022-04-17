@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../Firebase/Firebase.init';
 import Google from '../Google/Google';
 import './Login.css'
@@ -16,16 +16,19 @@ const Login = () => {
         error,
       ] = useSignInWithEmailAndPassword(auth);
 
+      const navigate =useNavigate();
+
     const handleLoginSubmit =(e)=>{
           e.preventDefault();
           signInWithEmailAndPassword(email, password);
+          navigate('/home');
     }
 
     
     return (
         <div className='container'>
             <div className='form-margin'>
-                <Form>
+                <Form onSubmit={handleLoginSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter email" />
                     
