@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Package-1",
+    "name": "PACKAGE 1",
     "Photographer": 2,
     "Cinephotographer": 2,
     "drone": "Available",
@@ -11,7 +11,7 @@
   },
   {
     "id": 2,
-    "name": "Package-2",
+    "name": "PACKAGE 2",
     "drone": "Available",
 
     "Photographer": 2,
@@ -23,7 +23,7 @@
   },
   {
     "id": 3,
-    "name": "Package-3",
+    "name": "PACKAGE 3",
     "drone": "Available",
 
     "Photographer": 1,

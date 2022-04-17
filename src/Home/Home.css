@@ -6,6 +6,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
+
 .slider-image{
     height: 560px;
 }
@@ -16,4 +17,8 @@
 
 .header-color{
     font: 36px Roboto;
+}
+.card-name-top{
+    padding: 55px;
+    background-color: lightgray;
 }

@@ -1,10 +1,14 @@
 import React from 'react';
 import { Button, Card, Carousel } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link } from 'react-router-dom';
+import auth from '../Component/Firebase/Firebase.init';
 import usePackage from '../Component/usePackage/usePackage';
 import './Home.css'
 
 const Home = () => {
     const [packagesItem, setPackagesItem] = usePackage();
+    
     return (
         <div>
         <div className='navbar-margin'>
@@ -55,15 +59,16 @@ const Home = () => {
                   {
                       
                         packagesItem.map(item=>(
-                                 <Card className='shadow rounded m-4 p-3' style={{ width: '18rem' }}>
+                                 <Card className='shadow rounded bg-secondary text-black m-4 p-3 fw-bold' style={{ width: '18rem' }}>
                                  <Card.Body>
-                                 <Card.Title>{item.name}</Card.Title>
-                                 <p class="card-text">Droneshot:{item.drone}</p>
-                                 <p class="card-text">Photographer: {item.Photographer}</p>
-                                 <p class="card-text">Cinephotographer: {item.Cinephotographer}</p>
-                                 <p class="card-text">Images: {item.img}</p>
-                                 <p class="card-text">Hours: {item.Hour}</p>
-                                 <p class="card-text">Price: {item.rate} BDT</p>
+                                 <Card.Title className="card-name-top">{item.name}</Card.Title>
+                                 <p className="card-text ms-4 mt-3">Droneshot:{item.drone}</p>
+                                 <p className="card-text ms-4">Photographer: {item.Photographer}</p>
+                                 <p className="card-text ms-4">Cinephotographer: {item.Cinephotographer}</p>
+                                 <p className="card-text ms-4 ">Images: {item.img}</p>
+                                 <p className="card-text ms-4">Hours: {item.Hour}</p>
+                                 <p className="card-text ms-4">Price: {item.rate} BDT</p>
+                                 <Link to='/checkout'><Button className='ms-5 mt-3' variant="primary">Book Now</Button></Link>
                                  </Card.Body>
                                  </Card>
                         ))
