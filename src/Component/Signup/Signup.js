@@ -18,7 +18,7 @@ const Signup = () => {
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
+      ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
       const navigate = useNavigate();
 
     console.log(createUserWithEmailAndPassword);
@@ -35,16 +35,16 @@ const Signup = () => {
                 <div className='form-margin'>
                 <Form onSubmit={handlesubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <input onChange={(e) => setName(e.target.value)} type="name" placeholder="Your Name" />
+                    <input onChange={(e) => setName(e.target.value)} type="name" placeholder="Your Name"  />
                     
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter email" />
+                    <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter email" required />
                     
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
+                    <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <input onChange={(e) => setConfirmPassword(e.target.value)} type="password" placeholder="Confirm password" />

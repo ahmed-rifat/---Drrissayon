@@ -9,6 +9,8 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 const Login = () => {
     const [email, setEmail]= useState('');
     const [password, setPassword]= useState('');
+    
+    
     const [
         signInWithEmailAndPassword,
         user,
@@ -30,12 +32,12 @@ const Login = () => {
             <div className='form-margin'>
                 <Form onSubmit={handleLoginSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter email" />
+                    <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter email" required />
                     
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
+                    <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" required/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Agree terms and conditions" />
@@ -43,13 +45,18 @@ const Login = () => {
                 <Button variant="primary" type="submit">
                     Login
                 </Button>
+                
                 </Form>
+                
             </div>
             <div>
+            
             <p>
                 Don't have an account? <Link to='/signup'>Please Signup</Link></p>
+                <p>Forget password? <Link to='/reset'>reset here</Link></p>
             </div>
             <div >OR</div>
+           
             <div><Google></Google></div>
 
         </div>

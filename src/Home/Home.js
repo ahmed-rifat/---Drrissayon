@@ -61,8 +61,9 @@ const Home = () => {
                         packagesItem.map(item=>(
                                  <Card className='shadow rounded bg-secondary text-black m-4 p-3 fw-bold' style={{ width: '18rem' }}>
                                  <Card.Body>
-                                 <Card.Title className="card-name-top">{item.name}</Card.Title>
-                                 <p className="card-text ms-4 mt-3">Droneshot:{item.drone}</p>
+                                 <img src={item.Topimg} class="card-img-top" alt="..."/>
+                                 <Card.Title className='ms-5 mt-3'>{item.name}</Card.Title>
+                                 <p className="card-text ms-4 mt-3">Droneshot: {item.drone}</p>
                                  <p className="card-text ms-4">Photographer: {item.Photographer}</p>
                                  <p className="card-text ms-4">Cinephotographer: {item.Cinephotographer}</p>
                                  <p className="card-text ms-4 ">Images: {item.img}</p>
