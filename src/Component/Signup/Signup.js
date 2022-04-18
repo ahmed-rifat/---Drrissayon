@@ -31,7 +31,7 @@ const Signup = () => {
     return (
         <div className='container'>
                 
-                <div className='form-margin'>
+                <div className='form-margin d-flex justify-content-center align-items-center'>
                 <Form onSubmit={handlesubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <input onChange={(e) => setName(e.target.value)} type="name" placeholder="Your Name"  />
@@ -51,16 +51,20 @@ const Signup = () => {
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Agree terms and conditions" />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button className='ms-5' variant="primary" type="submit">
                     Signup
                 </Button>
                 
                 </Form>
             </div>
-            <div><p>Already have an account? <Link to='/login'>Please login</Link></p></div>
-            <div>or</div>
-            <hr />
-            <div><Google></Google></div>
+            <div className='d-flex justify-content-center align-items-center mt-3'><p>Already have an account? <Link to='/login'>Please login</Link></p></div>
+            <div className='d-flex align-items-center'>
+                <div style={{height: '1px'}} className='bg-primary w-50' ></div>
+                <p className='d-flex justify-content-center align-items-center px-2 mt-3'>OR</p>
+                <div style={{height: '1px'}} className='bg-primary w-50'></div>
+            </div>
+            
+            <div className='d-flex justify-content-center align-items-center mt-3 me-4'><Google></Google></div>
 
             
         </div>

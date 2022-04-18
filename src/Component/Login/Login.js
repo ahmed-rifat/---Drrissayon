@@ -29,7 +29,7 @@ const Login = () => {
     
     return (
         <div className='container'>
-            <div className='form-margin'>
+            <div className='form-margin d-flex justify-content-center align-items-center'>
                 <Form onSubmit={handleLoginSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter email" required />
@@ -42,7 +42,7 @@ const Login = () => {
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Agree terms and conditions" />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button className='ms-5' variant="primary" type="submit">
                     Login
                 </Button>
                 
@@ -50,15 +50,22 @@ const Login = () => {
                 </Form>
                 
             </div>
-            <div>
+            <div className='d-flex justify-content-center align-items-center mt-2 ms-5'>
             
             <p>
                 Don't have an account? <Link to='/signup'>Please Signup</Link></p>
-                <p>Forget password? <Link to='/reset'>reset here</Link></p>
+                
             </div>
-            <div >OR</div>
+            <div className='d-flex justify-content-center align-items-center me-4'>
+            <p>Forget password? <Link to='/reset'>reset here</Link></p>
+            </div>
+            <div className='d-flex align-items-center'>
+                <div style={{height: '1px'}} className='bg-primary w-50' ></div>
+                <p className='d-flex justify-content-center align-items-center px-2 mt-3'>OR</p>
+                <div style={{height: '1px'}} className='bg-primary w-50'></div>
+            </div>
            
-            <div><Google></Google></div>
+            <div className='d-flex justify-content-center align-items-center me-4'><Google></Google></div>
 
         </div>
     );

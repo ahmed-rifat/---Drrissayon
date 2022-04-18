@@ -6,6 +6,7 @@ import auth from '../Component/Firebase/Firebase.init';
 
 
 
+
 const Header = () => {
   const [user, loading, error] = useAuthState(auth);
 console.log(user);  
@@ -19,14 +20,22 @@ if (loading) {
   };
 
     return (
-        <div>
+        
           
          <div className='fixed-top'>
-         <Navbar bg="primary" variant="dark">
-        <Container>
-        <Navbar.Brand href="/home">দৃশ্যায়ন - Drrissayon</Navbar.Brand>
-        <Nav className="ms-auto">
-          <Nav.Link href="/home">Home</Nav.Link>
+         
+
+      <Navbar bg="primary" variant="dark" expand="lg">
+  <Container fluid>
+  <Navbar.Brand href="/home">দৃশ্যায়ন - Drrissayon</Navbar.Brand>
+    <Navbar.Toggle aria-controls="navbarScroll" />
+    <Navbar.Collapse id="navbarScroll">
+      <Nav
+        className="ms-auto my-2 my-lg-0"
+        style={{ maxHeight: '100px' }}
+        navbarScroll
+      >
+        <Nav.Link href="/home">Home</Nav.Link>
           <Nav.Link href="/reviews">Reviews</Nav.Link>
           <Nav.Link href="/packages">Packages</Nav.Link>
           <Nav.Link href="/checkout">Checkout</Nav.Link>
@@ -34,13 +43,14 @@ if (loading) {
             (user?.email)? <Nav.Link onClick={logout} href="/login">Logout</Nav.Link>:
             <Nav.Link href="/login">Login</Nav.Link>
           }
-          
-        </Nav>
-        </Container>
-      </Navbar>
+      </Nav>
+      
+    </Navbar.Collapse>
+  </Container>
+</Navbar>
          </div>
           
-        </div>
+      
     );
 };
 

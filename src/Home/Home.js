@@ -78,7 +78,7 @@ const Home = () => {
                   
               </div>
                <div>
-                   <footer>
+                   <footer className='footer-responsive'>
                          
                         <hr />
                         <p className='text-center'>Copyright © 2021. All right reserved drissayon.com.bd</p>

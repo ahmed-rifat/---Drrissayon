@@ -6,9 +6,18 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
+@media only screen and (max-width: 768px){
+    .services{
 
+            grid-template-columns: repeat(1,1fr);
+        
+    }
+    .footer-responsive{
+        
+    }
+}
 .slider-image{
-    height: 560px;
+    height: 630px;
 }
 .text-color{
     color: #FFFFFFB0;

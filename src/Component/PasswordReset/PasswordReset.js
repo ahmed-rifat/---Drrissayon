@@ -2,25 +2,23 @@ import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import auth from '../Firebase/Firebase.init';
+import toast, { Toaster } from 'react-hot-toast';
+
 
 const PasswordReset = () => {
+    const notify = () => toast.success('Email sent! Check your Email');
+
     const [emailReset, setEmailReset]= useState('');
     const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(
         auth
       );
-    //   const [
-    //     signInWithEmailAndPassword,
-    //     user,
-    //     loading,
-    //     error1,
-    //   ] = useSignInWithEmailAndPassword(auth);
-
+        
       const handleResetSubmit =async()=>{
         await sendPasswordResetEmail(emailReset);
         
         if (sending) {
             return;
-          }else  alert('Sent email');
+          }
             
             
         
@@ -37,12 +35,13 @@ const PasswordReset = () => {
                 
 
                 {
-                    emailReset? (<Button className='w-75 mt-2'  variant="primary" type="submit">
+                    emailReset? (<Button onClick={notify} className='w-75 mt-2'  variant="primary" type="submit">
                     Reset password
                 </Button>) : (<Button className='w-75 mt-2' variant="primary" type="submit" disabled>
                     Reset password
                 </Button>)
                 }
+                <Toaster position='top-center' />
                 </Form>
                 </div>
         

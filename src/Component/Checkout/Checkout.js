@@ -8,7 +8,7 @@ const Checkout = () => {
     
     
     return (
-        <div className='container checkout-form'>
+        <div className='container checkout-form d-flex justify-content-center align-items-center'>
             <Form>
                 <Form.Group className="mb-3" controlId="formGroupEmail">
                     <input type="username" placeholder="Enter your Name" required />
@@ -22,7 +22,7 @@ const Checkout = () => {
                 <Form.Group className="mb-3" controlId="formGroupPassword">
                     <input type="phonenumber" placeholder="Your Phone Number" required />
                 </Form.Group>
-                <Button onClick={notify} variant="primary" type="submit">
+                <Button className='ms-5' onClick={notify} variant="primary" type="submit">
                     Submit
                 </Button>
                 <Toaster position='top-center' />
