@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, Spinner } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../Firebase/Firebase.init';
 import Google from '../Google/Google';
@@ -19,6 +19,10 @@ const Login = () => {
       ] = useSignInWithEmailAndPassword(auth);
 
       const navigate =useNavigate();
+      if (loading) {
+        return <Spinner animation='border' variant='primary'></Spinner>
+          
+      }
 
     const handleLoginSubmit =(e)=>{
           e.preventDefault();
@@ -32,17 +36,17 @@ const Login = () => {
             <div className='form-margin d-flex justify-content-center align-items-center'>
                 <Form onSubmit={handleLoginSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter email" required />
+                    <input className='input-space' onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter email" required />
                     
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" required/>
+                    <input className='input-space' onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" required/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Agree terms and conditions" />
                 </Form.Group>
-                <Button className='ms-5' variant="primary" type="submit">
+                <Button variant="primary" type="submit">
                     Login
                 </Button>
                 

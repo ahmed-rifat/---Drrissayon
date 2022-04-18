@@ -52,14 +52,14 @@ const Home = () => {
               </Carousel.Item>
             </Carousel>
        </div>
-              <h1 className='text-center text-info'>Services</h1>
+              <h1 className='text-center text-secondary fw-bold mt-4'>Services</h1>
 
               <div className='container services'>
                   
                   {
                       
                         packagesItem.map(item=>(
-                                 <Card className='shadow rounded bg-secondary text-black m-4 p-3 fw-bold' style={{ width: '18rem' }}>
+                                 <Card className='shadow rounded bg-secondary text-black m-5 p-3 fw-bold' style={{ width: '18rem' }}>
                                  <Card.Body>
                                  <img src={item.Topimg} class="card-img-top" alt="..."/>
                                  <Card.Title className='ms-5 mt-3'>{item.name}</Card.Title>
@@ -77,13 +77,9 @@ const Home = () => {
                     }
                   
               </div>
-               <div>
-                   <footer className='footer-responsive'>
-                         
-                        <hr />
-                        <p className='text-center'>Copyright © 2021. All right reserved drissayon.com.bd</p>
-                   </footer>
-               </div>
+               
+
+               
         </div>
     );
 };
