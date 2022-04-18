@@ -37,7 +37,7 @@ if (loading) {
       >
         <Nav.Link href="/home">Home</Nav.Link>
           <Nav.Link href="/blogs">Blogs</Nav.Link>
-          <Nav.Link href="/about">About</Nav.Link>
+          <Nav.Link href="/about">About me</Nav.Link>
           <Nav.Link href="/packages">Packages</Nav.Link>
           <Nav.Link href="/checkout">Checkout</Nav.Link>
           {

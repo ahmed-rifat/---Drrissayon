@@ -46,7 +46,7 @@ function App() {
 
       </div>
 
-      <div className='fixed-bottom'><Footer></Footer></div>
+      <div><Footer></Footer></div>
     </div>
   );
 }
