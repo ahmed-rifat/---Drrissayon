@@ -9,7 +9,7 @@
 * Also user can Login via Google signIn option.
 * it will send a verification sms to email for verification.
 * If user forget password, it can be reset through email.
-* User can book any package by submiting address and other inforation.
+* User can book any package by submiting address and other information.
 
 # Technology
 

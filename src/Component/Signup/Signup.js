@@ -3,7 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import Google from '../Google/Google';
 import auth from '../Firebase/Firebase.init';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import './Signup.css';
 
 
@@ -13,6 +13,8 @@ const Signup = () => {
     const [email, setEmail]= useState('');
     const [password, setPassword]= useState('');
     const [confirmPassword, setConfirmPassword]= useState('');
+    const[passError, setPassError] =useState('');
+    const [updateProfile, updating, UpdateError] = useUpdateProfile(auth);
     
     const [
         createUserWithEmailAndPassword,
@@ -22,11 +24,17 @@ const Signup = () => {
       ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
       const navigate = useNavigate();
 
-
-    const handlesubmit=(event)=>{
+    const handlesubmit=async (event)=>{
       event.preventDefault();
-      createUserWithEmailAndPassword(email, password)
-      navigate('/login');
+      if(password!==confirmPassword){
+        setPassError("password doesn't match") ;
+      }else{
+      await createUserWithEmailAndPassword(email, password)
+      await updateProfile({ displayName: name });
+          alert('Updated profile');
+
+          navigate('/login');
+      }
 
     }
     return (
@@ -49,6 +57,7 @@ const Signup = () => {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <input className='input-space' onChange={(e) => setConfirmPassword(e.target.value)} type="password" placeholder="Confirm password" />
                 </Form.Group>
+                <p style={{color:"red"}}>{passError}</p>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Agree terms and conditions" />
                 </Form.Group>

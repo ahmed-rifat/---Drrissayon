@@ -9,26 +9,39 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 const Login = () => {
     const [email, setEmail]= useState('');
     const [password, setPassword]= useState('');
+    const [loginError, setLoginError]= useState('');
     
     
     const [
         signInWithEmailAndPassword,
         user,
         loading,
-        error,
-      ] = useSignInWithEmailAndPassword(auth);
+        error] = useSignInWithEmailAndPassword(auth);
+        console.log(error?.message);
+
+        
 
       const navigate =useNavigate();
+      let errorFound;
+      
       if (loading) {
         return <Spinner animation='border' variant='primary'></Spinner>
           
       }
 
+      if(user){
+        navigate('/home');
+      }
+
+      if(error){
+        errorFound = <p className='text-danger'>Error: {error?.message}</p>
+      }
     const handleLoginSubmit =(e)=>{
           e.preventDefault();
           signInWithEmailAndPassword(email, password);
-          navigate('/home');
-    }
+          
+    
+}
 
     
     return (
@@ -43,15 +56,15 @@ const Login = () => {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <input className='input-space' onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" required/>
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Agree terms and conditions" />
-                </Form.Group>
+                <p>{errorFound}</p>
+                
                 <Button variant="primary" type="submit">
                     Login
                 </Button>
-                
+                <p style={{color:'red'}}>{loginError}</p>
                 
                 </Form>
+                
                 
             </div>
             <div className='d-flex justify-content-center align-items-center mt-2 ms-5'>

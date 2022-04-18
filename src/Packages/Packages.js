@@ -18,12 +18,12 @@ const Packages = () => {
                         
                         <Card.Body>
                         <Card.Title>{item.name}</Card.Title>
-                        <p class="card-text">Droneshot:{item.drone}</p>
-                        <p class="card-text">Photographer: {item.Photographer}</p>
-                        <p class="card-text">Cinephotographer: {item.Cinephotographer}</p>
-                        <p class="card-text">Images: {item.img}</p>
-                        <p class="card-text">Hours: {item.Hour}</p>
-                        <p class="card-text">Price: {item.rate} BDT</p>
+                        <p className="card-text">Droneshot:{item.drone}</p>
+                        <p className="card-text">Photographer: {item.Photographer}</p>
+                        <p className="card-text">Cinephotographer: {item.Cinephotographer}</p>
+                        <p className="card-text">Images: {item.img}</p>
+                        <p className="card-text">Hours: {item.Hour}</p>
+                        <p className="card-text">Price: {item.rate} BDT</p>
 
                         <Button variant="primary">Book Now</Button>
                         </Card.Body>
