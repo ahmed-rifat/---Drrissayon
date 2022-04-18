@@ -4,28 +4,48 @@ import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import auth from '../Firebase/Firebase.init';
 
 const PasswordReset = () => {
-    const [email, setEmail]= useState('');
+    const [emailReset, setEmailReset]= useState('');
     const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(
         auth
       );
+    //   const [
+    //     signInWithEmailAndPassword,
+    //     user,
+    //     loading,
+    //     error1,
+    //   ] = useSignInWithEmailAndPassword(auth);
+
+      const handleResetSubmit =async()=>{
+        await sendPasswordResetEmail(emailReset);
+        
+        if (sending) {
+            return;
+          }else  alert('Sent email');
+            
+            
+        
+  }
 
     return (
-        <div>
-            <div className='form-margin'>
-                <Form>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter email" required />
+        
+            <div className='form-margin d-flex justify-content-center align-items-center'>
+                <Form onSubmit={handleResetSubmit}>
+                <Form.Group controlId="formBasicEmail">
+                    <input onChange={(e) => setEmailReset(e.target.value)} type="email" placeholder="Enter your email" required />
                     
                 </Form.Group>
-                <Button onClick={async () => {
-                        await sendPasswordResetEmail(email);
-                        alert('Sent email');
-                        }} variant="primary" type="submit">
-                    Reset Button
-                </Button>
+                
+
+                {
+                    emailReset? (<Button className='w-75 mt-2'  variant="primary" type="submit">
+                    Reset password
+                </Button>) : (<Button className='w-75 mt-2' variant="primary" type="submit" disabled>
+                    Reset password
+                </Button>)
+                }
                 </Form>
                 </div>
-        </div>
+        
     );
 };
 

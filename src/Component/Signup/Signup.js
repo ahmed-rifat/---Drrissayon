@@ -1,9 +1,9 @@
 import React, { useState, useSyncExternalStore } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import Google from '../Google/Google';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../Firebase/Firebase.init';
 import { Link, useNavigate } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
 
 const Signup = () => {
@@ -21,7 +21,6 @@ const Signup = () => {
       ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
       const navigate = useNavigate();
 
-    console.log(createUserWithEmailAndPassword);
 
     const handlesubmit=(event)=>{
       event.preventDefault();
@@ -55,6 +54,7 @@ const Signup = () => {
                 <Button variant="primary" type="submit">
                     Signup
                 </Button>
+                
                 </Form>
             </div>
             <div><p>Already have an account? <Link to='/login'>Please login</Link></p></div>

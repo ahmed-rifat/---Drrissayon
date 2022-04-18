@@ -8,8 +8,11 @@ import auth from '../Component/Firebase/Firebase.init';
 
 const Header = () => {
   const [user, loading, error] = useAuthState(auth);
-  console.log(user);
-  
+console.log(user);  
+
+if (loading) {
+  return;
+}
 
   const logout = () => {
     signOut(auth);
